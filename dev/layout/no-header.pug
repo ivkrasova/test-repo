@@ -1,0 +1,11 @@
+block variables
+
+doctype html
+html(lang="en")
+  head
+    title(class='title') #{title}
+  body(class={
+    'body-main' : mainPage,
+    'body-inner' : innerPage
+  })
+    block content

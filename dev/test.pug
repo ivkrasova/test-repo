@@ -1,0 +1,37 @@
+extends layout/no-header
+
+mixin list(classname,...items)
+  ul(class='social' +classname)
+    each item in items
+      li(class='social-link social-link__' +item)= item
+
+mixin nav(link,title)
+  if(title === "Ссылка 1")
+    li.main-nav__item.main-nav__item--active
+      a(href=link).main.nav__link=title
+  else
+    li.main-nav__item
+      a(href=link).main.nav__link=title
+
+
+block variables
+  -var title = "Главная страница"
+  -var mainPage = true 
+
+
+block content
+
+  +list('list1', 'vk', 'fb', 'tw', 'inst')
+  +list('list2', 'vk', 'fb', 'tw', 'inst')
+
+  if(mainPage)
+    +list('list3', 'vk', 'fb', 'tw', 'inst')
+
+  ul.main-nav
+    +nav("", "Ссылка 1")
+    +nav("", "Ссылка 2")
+    +nav("", "Ссылка 3")
+    +nav("", "Ссылка 4")
+
+
+

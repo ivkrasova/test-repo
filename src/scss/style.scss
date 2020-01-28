@@ -1,0 +1,17 @@
+  // h1 {
+  //   $color: #010203;
+  //   color: $color;
+  //   border: 2px solid;
+  //   border-color: $color - #010101;
+
+  //   &:hover {
+  //     color: #010203 * 2;
+  //   }
+  // }
+
+  .col {
+    $block_width: 500px;
+    padding: 5px;
+    border: 1px solid black;
+    width: $block_width - (5px * 2) - (1px * 2);
+  }
